@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <h1 class="text-center">{{title | uppercase}}</h1>
+</div>
+<div class="container">
+  <app-painel *ngFor="let foto of fotos" titulo="{{ foto.titulo | uppercase }}">
+    <app-foto url="{{ foto.url }}" titulo="{{ foto.titulo }}" descricao="{{ foto.descricao }}"></app-foto>
+  </app-painel>
+</div>

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FotoComponent } from './foto.component';
-import { LegendaComponent } from './legenda.component';
+import { LegendaComponent } from '../legenda/legenda.component';
 
 
 @NgModule({
