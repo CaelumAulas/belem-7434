@@ -2,7 +2,23 @@
   <h1 class="text-center">{{title | uppercase}}</h1>
 </div>
 <div class="container">
-  <app-painel *ngFor="let foto of fotos" titulo="{{ foto.titulo | uppercase }}">
-    <app-foto url="{{ foto.url }}" titulo="{{ foto.titulo }}" descricao="{{ foto.descricao }}"></app-foto>
-  </app-painel>
+  <div class="row">
+    <div class="col-md-12">
+      <form action="">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <a [routerLink]="['/cadastro']" class="btn btn-primary">Nova foto</a>
+          </span>
+
+          <input #inputBusca type="search" placeholder="Busca por título" class="form-control">
+        </div>
+      </form>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <app-painel *ngFor="let foto of fotos | filtroPorTitulo:inputBusca.value" titulo="{{ foto.titulo | uppercase }}" class="col-md-6">
+      <app-foto url="{{ foto.url }}" titulo="{{ foto.titulo }}" descricao="{{ foto.descricao }}"></app-foto>
+    </app-painel>
+  </div>  
 </div>
